@@ -1,0 +1,289 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fff8f0">
+  <title>Laranjinhas 🍊</title>
+
+  <style>
+    :root {
+      --fundo: #fff8f0;
+      --texto: #493d42;
+      --rosa: #f5dce5;
+      --lilas: #e8e0fa;
+      --azul: #dcecf8;
+      --menta: #dff1e5;
+      --laranja: #f3a65b;
+      --branco: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--fundo);
+      color: var(--texto);
+      font-family: "Trebuchet MS", Arial, sans-serif;
+    }
+
+    button, input, textarea {
+      font: inherit;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    .pagina {
+      width: min(100% - 28px, 680px);
+      margin: 0 auto;
+      padding-bottom: 40px;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 22px 0;
+    }
+
+    .marca {
+      font-size: 1.35rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+
+    .marca span {
+      color: #d98239;
+    }
+
+    .selo {
+      background: var(--menta);
+      padding: 9px 12px;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      font-weight: bold;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 30px 24px;
+      border-radius: 28px;
+      background: var(--rosa);
+    }
+
+    .hero::after {
+      content: "🍊";
+      position: absolute;
+      right: -8px;
+      bottom: -18px;
+      font-size: 105px;
+      opacity: 0.2;
+      transform: rotate(-15deg);
+      pointer-events: none;
+    }
+
+    .etiqueta {
+      display: inline-block;
+      padding: 7px 11px;
+      background: #ffffffa8;
+      border-radius: 20px;
+      font-size: 0.76rem;
+      font-weight: bold;
+    }
+
+    h1 {
+      max-width: 390px;
+      margin: 18px 0 10px;
+      font-size: clamp(2rem, 8vw, 3rem);
+      line-height: 1.08;
+      letter-spacing: -1.5px;
+    }
+
+    .hero p {
+      max-width: 340px;
+      margin: 0;
+      line-height: 1.6;
+      font-size: 0.96rem;
+    }
+
+    .detalhe {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .detalhe span {
+      padding: 8px 11px;
+      border-radius: 20px;
+      background: #ffffffb8;
+      font-size: 0.8rem;
+    }
+
+    .secao-titulo {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 12px;
+      margin: 30px 0 16px;
+    }
+
+    .secao-titulo h2 {
+      margin: 0;
+      font-size: 1.4rem;
+      letter-spacing: -0.5px;
+    }
+
+    .secao-titulo p {
+      margin: 5px 0 0;
+      font-size: 0.85rem;
+      opacity: 0.75;
+    }
+
+    .mini-icone {
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      background: var(--azul);
+      border-radius: 15px;
+      font-size: 1.35rem;
+    }
+
+    .produtos {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 13px;
+    }
+
+    .produto {
+      min-width: 0;
+      padding: 16px;
+      border: 1px solid #eadfd9;
+      border-radius: 22px;
+      background: var(--branco);
+      box-shadow: 0 5px 18px #63452b08;
+    }
+
+    .produto-icone {
+      display: grid;
+      place-items: center;
+      min-height: 95px;
+      margin-bottom: 12px;
+      border-radius: 16px;
+      background: var(--lilas);
+      font-size: 3rem;
+    }
+
+    .produto:nth-child(2) .produto-icone {
+      background: var(--menta);
+    }
+
+    .produto:nth-child(3) .produto-icone {
+      background: var(--azul);
+    }
+
+    .produto:nth-child(4) .produto-icone {
+      background: var(--rosa);
+    }
+
+    .produto h3 {
+      margin: 0 0 6px;
+      font-size: 1rem;
+    }
+
+    .produto p {
+      min-height: 36px;
+      margin: 0 0 12px;
+      font-size: 0.8rem;
+      line-height: 1.45;
+      opacity: 0.75;
+    }
+
+    .preco {
+      color: #b9692b;
+      font-size: 1.15rem;
+      font-weight: 800;
+    }
+
+    .aviso {
+      margin-top: 20px;
+      padding: 15px;
+      border-radius: 18px;
+      background: var(--menta);
+      font-size: 0.88rem;
+      line-height: 1.55;
+    }
+
+    @media (max-width: 360px) {
+      .pagina {
+        width: calc(100% - 20px);
+      }
+
+      .produto {
+        padding: 11px;
+      }
+
+      .hero {
+        padding: 25px 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="pagina">
+    <header>
+      <div class="marca">docinho <span>🍊</span></div>
+      <div class="selo">Feito com carinho ♡</div>
+    </header>
+
+    <section class="hero">
+      <span class="etiqueta">UM MIMO PRA SEU DIA ✨</span>
+
+      <h1>Pequenas delícias, grandes sorrisos.</h1>
+
+      <p>
+        Escolha suas laranjinhas favoritas e deixe
+        seu dia um pouquinho mais gostoso.
+      </p>
+
+      <div class="detalhe">
+        <span>🍊 Feitas com carinho</span>
+        <span>💗 Peça pelo WhatsApp</span>
+      </div>
+    </section>
+
+    <section>
+      <div class="secao-titulo">
+        <div>
+          <h2>Nosso cardápio</h2>
+          <p>Escolha suas favoritas ♡</p>
+        </div>
+        <div class="mini-icone">🧁</div>
+      </div>
+
+      <div class="produtos">
+
+        <!-- PARTE 2: produtos, quantidades e preços -->
+
+      </div>
+    </section>
+
+    <!-- PARTE 2: área do pedido -->
+
+    <!-- PARTE 3: música, total e WhatsApp -->
+
+  </main>
+
+  <!-- PARTE 3: JavaScript -->
+
+</body>
+</html>
